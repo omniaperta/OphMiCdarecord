@@ -20,9 +20,15 @@ Migration
 Roadmap
 -------
 
-1. allow CRUD through UI for creating event.
-2. Apply XSLT to CDA for viewing.
-3. Define CDA record as a measurement
-4. Create FHIR API for receiving CDA and automatically creating event (will need to define episode/firm rules, although will initially only need to worry about single case of each)
+Done
+----
+
+1. allow CRUD through UI for creating event. 
+1. Apply XSLT to CDA for viewing.
+
+Upcoming
+--------
+1. Define CDA record as a measurement
+1. Create FHIR API for receiving CDA and automatically creating event (will need to define episode/firm rules, although will initially only need to worry about single case of each)
 	i) Will need to have the event active but not add-able (core change)
-5. update CRUD UI to reflect automatic event creation (turn off update, only allow create for admin, change delete behaviour to ensure that it removes measurement as well as event)
+1. update CRUD UI to reflect automatic event creation (turn off update, only allow create for admin, change delete behaviour to ensure that it removes measurement as well as event)
