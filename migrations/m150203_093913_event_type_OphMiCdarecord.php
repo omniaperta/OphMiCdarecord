@@ -10,7 +10,7 @@ class m150203_093913_event_type_OphMiCdarecord extends CDbMigration
 	{
 		if (!$this->dbConnection->createCommand()->select('id')->from('event_type')->where('class_name=:class_name', array(':class_name'=>'OphMiCdarecord'))->queryRow()) {
 			$group = $this->dbConnection->createCommand()->select('id')->from('event_group')->where('name=:name',array(':name'=>'Miscellaneous'))->queryRow();
-			$this->insert('event_type', array('class_name' => 'OphMiCdarecord', 'name' => 'CDARecord','event_group_id' => $group['id']));
+			$this->insert('event_type', array('class_name' => 'OphMiCdarecord', 'name' => 'CDA Record','event_group_id' => $group['id']));
 		}
 		$event_type = $this->dbConnection->createCommand()->select('id')->from('event_type')->where('class_name=:class_name', array(':class_name'=>'OphMiCdarecord'))->queryRow();
 
