@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- OE Hacks:
-a) context to css to only affect the cda element
-b) changed the encoding to UTF-8 -->
 <!--
   Title: CDA XSL StyleSheet
   Original Filename: cda.xsl 
@@ -30,7 +27,7 @@ b) changed the encoding to UTF-8 -->
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:n1="urn:hl7-org:v3"
                 xmlns:in="urn:lantana-com:inline-variable-data">
-    <xsl:output method="html" indent="yes" version="4.01" encoding="UTF-8" doctype-system="http://www.w3.org/TR/html4/strict.dtd" doctype-public="-//W3C//DTD HTML 4.01//EN"/>
+    <xsl:output method="html" indent="yes" version="4.01" encoding="ISO-8859-1" doctype-system="http://www.w3.org/TR/html4/strict.dtd" doctype-public="-//W3C//DTD HTML 4.01//EN"/>
     <xsl:param name="limit-external-images" select="'yes'"/>
     <!-- A vertical bar separated list of URI prefixes, such as "http://www.example.com|https://www.example.com" -->
     <xsl:param name="external-image-whitelist"/>
@@ -2453,84 +2450,89 @@ b) changed the encoding to UTF-8 -->
     <xsl:template name="addCSS">
         <style type="text/css">
          <xsl:text>
-.cda  {
+body {
   color: #003366;
   background-color: #FFFFFF;
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 11px;
 }
 
-.cda h1 {
+a {
+  color: #003366;
+  background-color: #FFFFFF;
+}
+
+h1 {
   font-size: 12pt;
   font-weight: bold;
 }
 
-.cda h2 {
+h2 {
   font-size: 11pt;
   font-weight: bold;
 }
 
-.cda h3 {
+h3 {
   font-size: 10pt;
   font-weight: bold;
 }
 
-.cda h4 {
+h4 {
   font-size: 8pt;
   font-weight: bold;
 }
 
 
-.cda table {
+table {
   line-height: 10pt;
   width: 100%;
 }
 
-.cda th {
+th {
   background-color: #ffd700;
 }
 
-.cda td {
+td {
   padding: 0.1cm 0.2cm;
   vertical-align: top;
   background-color: #ffffcc;
 }
 
-.cda .h1center {
+.h1center {
   font-size: 12pt;
   font-weight: bold;
   text-align: center;
   width: 80%;
 }
 
-.cda .header_table{
+.header_table{
   border: 1pt inset #00008b;
 }
 
-.cda .td_label{
+.td_label{
   font-weight: bold;
   color: white;
 }
 
-.cda .td_header_role_name{
+.td_header_role_name{
   width: 20%;
   background-color: #3399ff;
 }
 
-.cda .td_header_role_value{
+.td_header_role_value{
   width: 80%;
   background-color: #ccccff;
 }
 
-.cda .Bold{
+.Bold{
   font-weight: bold;
 }
 
-.cda .Italics{
+.Italics{
   font-style: italic;
 }
 
-.cda .Underline{
+.Underline{
   text-decoration:underline;
 }
 

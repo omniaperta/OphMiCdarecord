@@ -11,16 +11,14 @@ use \OEModule\OphMiCdarecord\models;
 
 class DefaultController extends \BaseEventTypeController
 {
+	
+	/**
+	 * Returns the xslt processor for transforming CDA to HTML 
+	 */
 	private function getMessageXSLT() {
 		$xsl = new \DOMDocument();
 		
 		error_reporting(-1);
-		/*
-		$xsl->substituteEntities = true;
-		$xml = file_get_contents(Yii::getPathOfAlias('application.modules.'.$this->getModule()->name.'.xsl') . "/cda.xsl");
-		$xml = str_replace("&", "&amp;", $xml);
-		$xsl->loadXML($xml);
-		*/
 		$xsl->load(Yii::getPathOfAlias('application.modules.'.$this->getModule()->name.'.xsl') . "/cda.xsl");
 	
 		$proc = new \XSLTProcessor();
@@ -30,10 +28,15 @@ class DefaultController extends \BaseEventTypeController
 		return $proc;
 	}
 	
-	public function getHTMLCDA($element) {
+	/**
+	 * returns the CDA from the given element as an HTML document
+	 * 
+	 * @param Element_OphMiCdarecord_Document  $element
+	 */
+	public function getHTMLCDA(models\Element_OphMiCdarecord_Document $element) {
 		
 		$xml = $element->getCdaDOM();
 	
-		return $this->getMessageXSLT()->transformToXML($xml);
+		return utf8_encode($this->getMessageXSLT()->transformToXML($xml));
 	}
 }
