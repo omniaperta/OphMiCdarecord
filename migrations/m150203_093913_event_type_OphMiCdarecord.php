@@ -25,7 +25,7 @@ class m150203_093913_event_type_OphMiCdarecord extends CDbMigration
 		$this->createTable('et_ophmicdarecord_document', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
 				'event_id' => 'int(10) unsigned NOT NULL',
-				'cda' => 'text DEFAULT \'\'',
+				'cda' => 'mediumtext DEFAULT \'\'',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
 				'created_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
@@ -43,7 +43,7 @@ class m150203_093913_event_type_OphMiCdarecord extends CDbMigration
 		$this->createTable('et_ophmicdarecord_document_version', array(
 				'id' => 'int(10) unsigned NOT NULL',
 				'event_id' => 'int(10) unsigned NOT NULL',
-				'cda' => 'text DEFAULT \'\'', // cda
+				'cda' => 'mediumtext DEFAULT \'\'', // cda
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
 				'created_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',

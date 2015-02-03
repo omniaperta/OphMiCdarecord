@@ -104,9 +104,7 @@ class Element_OphMiCdarecord_Document extends \BaseEventTypeElement
 			
 			$this->_cdaDOM = new \DOMDocument();
 			$this->_cdaDOM->preserveWhiteSpace = false;
-			//$this->_cdaDOM->loadXML($this->cda);
-			$this->_cdaDOM->loadXML(str_replace("&", "&amp;", $this->cda));
-			$this->_cdaDOM->substituteEntities = true;
+			$this->_cdaDOM->loadXML($this->cda);
 		}
 		return $this->_cdaDOM;
 	}
